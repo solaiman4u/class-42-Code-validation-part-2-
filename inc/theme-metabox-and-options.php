@@ -192,8 +192,8 @@ add_filter('cs_metabox_options', 'industry_cs_framework_options');
 function industry_theme_options($options)
 {
     
-    $options = array(); // remove old options
-    
+    $options = array();
+    /*remove old options*/
     
     $options[] = array(
         'name' => 'header_option_2',
@@ -462,8 +462,26 @@ function industry_theme_options($options)
         
     );
     
+    
+    
     $options[] = array(
-        'id' => 'social_section',
+        'name' => 'industry_blog_options',
+        'title' => 'Blog Options',
+        'icon' => 'fa fa-heart',
+        'fields' => array(
+            array(
+                'id' => 'enable_post_by',
+                'type' => 'switcher',
+                'title' => 'Post By Option',
+                'default' => true
+            )
+        )
+        
+    );
+    
+    
+     $options[] = array(
+        'name' => 'social_section',
         'title' => 'Social Section',
         'fields' => array(
             array(
@@ -486,28 +504,11 @@ function industry_theme_options($options)
                 )
             )
         )
-    );
-    
-    $options[] = array(
-        'name' => 'industry_blog_options',
-        'title' => 'Blog Options',
-        'icon' => 'fa fa-heart',
-        'fields' => array(
-            array(
-                'id' => 'enable_post_by',
-                'type' => 'switcher',
-                'title' => 'Post By Option',
-                'default' => true
-            )
-        )
-        
-    );
-    
-    
+    );    
+
     
     return $options;
     
 }
 add_filter('cs_framework_options', 'industry_theme_options');
-
 
